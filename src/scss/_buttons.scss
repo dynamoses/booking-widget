@@ -1,0 +1,74 @@
+.buttons {
+  border-radius: 9999px;
+  font-weight: bold;
+  transition: opacity 0.2s;
+  cursor: pointer;
+
+  &.buttons {
+    &-primary {
+      background-color: $primary-red;
+      font-weight: normal;
+      color: #fff;
+    }
+
+    &-secondary {
+      background-color: #fff;
+      color: $highlighted-color;
+    }
+    &-tertiary {
+      background-color: $highlighted-color;
+      font-weight: normal;
+      color: #fff;
+    }
+    &-add {
+      color: $highlighted-color;
+      background-color: $icon-bg-secondary-color;
+    }
+    &-success {
+      color: $success-green;
+      background-color: $bg-success;
+    }
+    &-back {
+      color: $highlighted-color;
+      background-color: transparent;
+      border: 1px solid $highlighted-color;
+    }
+    &-small {
+      padding: 0.5rem 0.75rem;
+    }
+    &-soft {
+      background-color: $blue-soft;
+      color: $highlighted-color;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;
+      width: 30px;
+      height: 30px;
+
+      &.buttons-remove {
+        background-color: #fff;
+        color: $primary-red;
+        border: 1px solid $border-grey;
+      }
+    }
+    &-floating {
+      background-color: #fff;
+      color: #000;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;
+    }
+    &.disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+
+  &:hover {
+    opacity: 0.85;
+  }
+}

@@ -1,0 +1,122 @@
+.flight-points {
+  width: 2px;
+  position: relative;
+  background-color: darken($border-grey, 20%);
+
+  &::before,
+  &:after {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid darken($border-grey, 20%);
+    content: "";
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+  }
+
+  &::before {
+    top: 0;
+  }
+  &::after {
+    bottom: 0;
+  }
+}
+
+.journey-more-details {
+  height: 0;
+  visibility: hidden;
+  margin: 0;
+  padding: 0;
+  transition: margin-top 0.1s;
+  .more-details-trigger {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background-color: #fff;
+    width: 24px;
+    height: 24px;
+    border: 1px solid $border-grey;
+    visibility: visible;
+
+    &::before {
+      content: "expand_more";
+      font-family: "Material Icons";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 15px;
+      transform: translate(-50%, -50%);
+    }
+
+    &.open {
+      background-color: $icon-bg-secondary-color;
+      top: -12px;
+      &::before {
+        content: "expand_less";
+        font-family: "Material Icons";
+      }
+    }
+  }
+  &.open {
+    height: auto;
+    visibility: visible;
+    margin-top: 0.2rem;
+    padding: 0.9rem;
+  }
+}
+
+.airport-search {
+  &__input {
+    border: 1px solid $border-grey;
+    border-radius: 5px;
+  }
+}
+
+.filters {
+  .filter-item {
+    border: 1px solid $border-grey;
+    color: #888;
+    &:not(.selected) {
+      margin-right: -1px;
+    }
+    label {
+      cursor: pointer;
+    }
+    &:first-child {
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+    }
+    &:last-child {
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+
+    &.selected {
+      border: 1px solid $highlighted-color;
+      border-radius: 3px;
+      .filter {
+        &-name {
+          color: $highlighted-color;
+        }
+        &-price {
+          color: #000;
+        }
+      }
+    }
+
+    input {
+      display: none;
+    }
+  }
+}
+
+.flight-line {
+  width: 12px;
+  height: 2px;
+  margin-right: 1px;
+  background-color: #222;
+}

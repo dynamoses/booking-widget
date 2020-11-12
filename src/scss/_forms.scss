@@ -1,0 +1,245 @@
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  input {
+    display: none;
+    & + .checkmark {
+      border: 1px solid $border-grey;
+      border-radius: 3px;
+      width: 24px;
+      height: 24px;
+      @extend .mr-2;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    &:checked ~ .checkmark {
+      background-color: $success-green;
+      border: 0;
+      &::before {
+        font-family: "Material Icons";
+        content: "check";
+        color: #fff;
+      }
+    }
+    & + .slidecheck {
+      border-radius: 15px;
+      width: 45px;
+      height: 26px;
+      background-color: $border-grey;
+      position: relative;
+      transition: all 0.2s;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 3px;
+        transform: translateY(-50%);
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background-color: #fff;
+      }
+    }
+    &:checked ~ .slidecheck {
+      background-color: $success-green;
+      &::before {
+        left: calc(100% - 24px);
+      }
+    }
+  }
+}
+
+input[type="radio"] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+
+  & + .radio-control {
+    &::before {
+      content: "radio_button_unchecked";
+      font-family: "Material Icons";
+      color: $border-grey;
+    }
+  }
+  &:checked + .radio-control {
+    &::before {
+      content: "radio_button_checked";
+      font-family: "Material Icons";
+      color: #000;
+    }
+  }
+}
+
+.add-remove-container {
+  input {
+    display: none;
+  }
+
+  &.added {
+    position: relative;
+    pointer-events: none;
+    &::before {
+      pointer-events: all;
+      font-family: "Material Icons";
+      content: "delete_outline";
+      font-size: 24px;
+      position: absolute;
+      top: 50%;
+      left: -30px;
+      transform: translateY(-50%);
+      color: $primary-red;
+    }
+  }
+}
+
+.form {
+  text-align: left;
+  .form-item {
+    margin-bottom: 10px;
+    .label {
+      font-weight: bold;
+      font-size: 0.75rem;
+
+      &-light {
+        color: #777;
+      }
+    }
+    .form-input-container {
+      position: relative;
+      &::before,
+      &::after {
+        color: #555;
+        font-family: "Material Icons";
+        font-weight: 600;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 5%;
+        font-size: 20px;
+        z-index: 20;
+      }
+
+      &.search {
+        &::after {
+          content: "search";
+        }
+      }
+      &.date {
+        color: #000;
+        .vdp-datepicker {
+          z-index: 10;
+        }
+        width: 50%;
+        &::before {
+          content: "date_range";
+          color: #222;
+        }
+
+        input {
+          width: 100%;
+        }
+        &-text {
+          width: 50%;
+        }
+      }
+      &.currency {
+        &::before {
+          content: attr(data-currency);
+          position: absolute;
+          left: 10px;
+          top: 50%;
+          transform: translateY(-50%);
+          font-family: Roboto, "sans-serif";
+          color: #000;
+          @extend .text-sm;
+          display: table;
+        }
+      }
+      &.selected::after {
+        content: "check";
+        background-color: $bg-success;
+        color: $success-green;
+        border-radius: 50%;
+        right: -40px;
+        padding: 0 5px;
+      }
+      &.select {
+        &::after {
+          content: "expand_more";
+        }
+      }
+      &.half {
+        width: 50%;
+      }
+      input,
+      select {
+        padding: 10px 15px;
+        font-size: 0.875rem;
+        border: 1px solid $border-grey;
+        width: 100%;
+
+        &::placeholder {
+          color: #777;
+        }
+
+        &.small {
+          padding: 6px 10px;
+          font-size: 0.75rem;
+        }
+        &.currency {
+          padding-left: 20px;
+        }
+      }
+      select {
+        appearance: none;
+      }
+    }
+  }
+}
+
+.center-line {
+  width: 20px;
+  height: 2px;
+  background-color: #000;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.form-error {
+  @extend .text-red-primary;
+  @extend .text-xs;
+
+  &.inline {
+    position: absolute;
+    top: 100%;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid $border-grey;
+    border-radius: 3px;
+
+    &.left {
+      left: 0;
+    }
+    &.right {
+      right: 0;
+    }
+  }
+}

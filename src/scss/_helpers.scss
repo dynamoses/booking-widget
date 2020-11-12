@@ -1,0 +1,58 @@
+.text {
+  &-xxs {
+    font-size: 0.65rem;
+  }
+  &-tiny {
+    font-size: 0.55rem;
+  }
+}
+
+.text-blue-main {
+  color: $highlighted-color;
+}
+
+.bg-blue-main {
+  background-color: $highlighted-color;
+}
+
+.star-rating {
+  color: #ffce19;
+}
+
+.selected-icon-bg {
+  background-color: $icon-bg-secondary-color;
+}
+
+.bg-success {
+  background-color: $bg-success;
+}
+
+.text-success {
+  color: $success-green;
+}
+
+.text-red-primary {
+  color: $primary-red;
+}
+
+.bg-red-primary {
+  background-color: $primary-red;
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.selected-border {
+  border: 1px solid $highlighted-color !important;
+}
+
+.warning {
+  background-color: #fff0e8;
+  color: #ff6f1d;
+}
+
+.padding-top-full {
+  padding-top: 100%;
+}

@@ -1,0 +1,29 @@
+@tailwind base;
+
+h1 {
+  @apply text-2xl;
+}
+h2 {
+  @apply text-xl;
+}
+h3 {
+  @apply text-lg;
+}
+
+@tailwind components;
+@tailwind utilities;
+
+@import "_variables.scss";
+@import "_animations.scss";
+@import "_custom-widget-styles.scss";
+@import "_departure-dates";
+@import "_datepicker.scss";
+@import "_helpers.scss";
+@import "_rooms.scss";
+@import "_breakdown.scss";
+@import "_common.scss";
+@import "_forms.scss";
+@import "_modal.scss";
+@import "_flights.scss";
+@import "_itinerary.scss";
+@import "_buttons.scss";

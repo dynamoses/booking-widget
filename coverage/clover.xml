@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1602685693795" clover="3.2.0">
+  <project timestamp="1602685693795" name="All files">
+    <metrics statements="6" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="3" elements="12" coveredelements="6" complexity="0" loc="6" ncloc="6" packages="1" files="1" classes="1">
+      <file name="AddGuestsPicker.vue" path="C:\Users\daniel.moses\Documents\Projects\QABW\src\QABW.Client\qabw\src\components\AddGuestsPicker.vue">
+        <metrics statements="6" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="3"/>
+        <line num="102" count="1" type="stmt"/>
+        <line num="106" count="1" type="stmt"/>
+        <line num="109" count="1" type="stmt"/>
+        <line num="114" count="0" type="stmt"/>
+        <line num="117" count="0" type="stmt"/>
+        <line num="120" count="0" type="stmt"/>
+      </file>
+    </metrics>
+  </project>
+</coverage>

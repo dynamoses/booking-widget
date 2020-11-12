@@ -1,0 +1,77 @@
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: #fff;
+  min-height: 100%;
+  z-index: 100;
+
+  &,
+  &-header {
+    .modal-close {
+      @extend .close-button;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+  }
+
+  &.fade-enter-active,
+  &.fade-leave-active {
+    transition: opacity 0.2s;
+  }
+  &.fade-enter,
+  &.fade-leave-to {
+    opacity: 0;
+  }
+
+  &-header.fixed-header {
+    z-index: 110;
+    top: 0;
+    left: 0;
+  }
+}
+
+.modal-fixed-element {
+  &.fade-enter-active,
+  &.fade-leave-active {
+    transition: opacity 0.2s;
+  }
+  &.fade-enter,
+  &.fade-leave-to {
+    opacity: 0;
+  }
+}
+
+.modal-header {
+  @extend .outer-section;
+  .days-header {
+    padding-right: 5px;
+    .day-item {
+      width: calc(100% / 7);
+    }
+  }
+  .year-tabs {
+    background-color: darken($main-bg-color, 5%);
+    border-radius: 40px;
+    .year-item {
+      padding: 8px 15px;
+      cursor: pointer;
+      &.selected {
+        border-radius: 40px;
+        background-color: #fff;
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+.fixed-footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 110;
+}

@@ -1,0 +1,90 @@
+.outer-section {
+  padding: 0.7rem;
+}
+
+.inner-section {
+  padding: 0.8rem;
+  border-radius: 5px;
+}
+
+.link-text {
+  color: $highlighted-color;
+  text-decoration: underline;
+}
+
+.section {
+  &-border {
+    border: 1px solid $border-grey;
+    border-radius: 5px;
+
+    &.border-thick {
+      border-width: 2px;
+    }
+  }
+  &-bg {
+    background-color: #fff;
+  }
+}
+
+.flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+.header {
+  &-main {
+    @extend .text-2xl;
+    font-weight: bold;
+  }
+}
+
+.info-container {
+  background-color: $info-bg-color;
+  border-radius: 5px;
+}
+
+.required {
+  position: relative;
+  &::after {
+    margin-left: 3px;
+    color: $primary-red;
+    content: "*";
+  }
+}
+
+.note-info {
+  border-width: 2px;
+
+  .note {
+    color: $highlighted-color;
+  }
+}
+
+.success-check {
+  background-color: $bg-success;
+  color: $success-green;
+  border-radius: 50%;
+  padding: 1px;
+  &.tiny {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.back-to-top {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  border-radius: 50%;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75);
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+}

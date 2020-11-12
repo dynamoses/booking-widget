@@ -1,0 +1,91 @@
+.rooms {
+  .item-name-container {
+    .room-icon {
+      position: relative;
+
+      &::after {
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        line-height: 23px;
+        font-weight: bold;
+        content: attr(data-room-quantity) "x";
+        font-size: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -10px;
+        background-color: #fff;
+        z-index: 10;
+        border: 1px solid $border-grey;
+        border-radius: 50%;
+      }
+    }
+
+    &.selected {
+      border-color: $highlighted-color;
+
+      .room-icon {
+        border-color: transparent;
+        background-color: $icon-bg-secondary-color;
+
+        &::after {
+          background-color: $highlighted-color;
+          color: #fff;
+          border-color: $highlighted-color;
+          font-weight: normal;
+        }
+
+        .bed-icon {
+          color: $highlighted-color;
+        }
+      }
+
+      .room-name {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.add-nights-button {
+  border-radius: 30px;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.added-flag {
+  border-radius: 30px;
+}
+
+.duration-container {
+  .duration-line {
+    position: relative;
+    &::before {
+      width: 100%;
+      height: 2px;
+      background-color: #000;
+      content: "";
+      position: absolute;
+    }
+    .connection-dots {
+      position: relative;
+      width: 14px;
+      height: 14px;
+      background-color: #fff;
+      &::before {
+        content: "";
+        background-color: $primary-red;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 8px;
+        height: 8px;
+      }
+    }
+  }
+}

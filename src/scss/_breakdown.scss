@@ -1,0 +1,45 @@
+.trip-breakdown {
+  box-shadow: 0px 1px 15px 1px rgba(0, 0, 0, 0.6);
+  .material-icons.list-icon {
+    width: 30px;
+    text-align: center;
+    margin-right: 5px;
+  }
+
+  &__summary {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    opacity: 0;
+    &.open {
+      max-height: 500px;
+      opacity: 1;
+    }
+  }
+  .breakdown-trigger {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -20px;
+    margin: auto;
+    background-color: #fff;
+    width: 130px;
+    border: 1px solid $border-grey;
+    padding: 8px 10px;
+    border-radius: 30px;
+    transition: all 0.2s;
+
+    &.open {
+      background-color: $highlighted-color;
+      color: #fff;
+
+      &:hover {
+        background-color: darken($highlighted-color, 10%);
+      }
+    }
+
+    &:hover {
+      background-color: darken(#fff, 10%);
+    }
+  }
+}

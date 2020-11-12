@@ -1,0 +1,253 @@
+.container {
+  margin: 0 auto;
+  font-family: "Roboto", sans-serif;
+}
+
+.app-booking-widget {
+  &::-webkit-scrollbar,
+  ::-webkit-scrollbar {
+    width: 5px;
+
+    &-track {
+      background: transparent;
+    }
+    &-thumb {
+      background: #9d9d9e;
+      border-radius: 5px;
+    }
+  }
+}
+
+.widget-container {
+  width: 320px;
+  height: 600px;
+  background-color: $main-bg-color;
+}
+
+.is-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 20px;
+  * {
+    display: none;
+  }
+  &::before {
+    content: "";
+    height: 50px;
+    width: 50px;
+    background-image: linear-gradient(to right, #17ab3b 0%, #3a4ed5 100%);
+    border-radius: 50%;
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.75);
+    border: 0;
+    animation: infinite-rotate 1s linear infinite;
+  }
+}
+
+.primary-button {
+  background-color: $primary-button-bg-color;
+  transition: opacity 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.send-quote-button {
+  transition: opacity 0.2s;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.close-button {
+  position: absolute;
+  cursor: pointer;
+
+  &:before {
+    visibility: visible;
+    content: "close";
+    font-family: "Material Icons";
+    font-weight: 600;
+    width: 26px;
+    height: 26px;
+    font-size: 15px;
+    padding: 3px;
+    border: 1px solid $icon-border-color;
+    background-color: $icon-bg-color;
+    border-radius: 50%;
+    opacity: 1;
+    transition: opacity 0.2s ease;
+  }
+
+  &:hover {
+    &:before {
+      opacity: 0.7;
+    }
+  }
+}
+
+.round-button {
+  border: 1px solid $icon-border-color;
+  background-color: $icon-bg-color;
+  border-radius: 50%;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+  display: flex;
+  justify-content: center;
+
+  &:hover {
+    opacity: 0.8;
+  }
+  &::before {
+    font-family: "Material Icons";
+    color: #222;
+    font-weight: bold;
+  }
+}
+
+.forwards {
+  &.slide-fade-leave {
+    &-active {
+      animation: $slide-fade-leave-duration slide-fade-out-forwards;
+    }
+  }
+
+  &.slide-fade-enter {
+    &-active {
+      animation: $slide-fade-enter-duration slide-fade-in-forwards;
+      width: 100%;
+    }
+  }
+}
+
+.backwards {
+  &.slide-fade-leave {
+    &-active {
+      animation: $slide-fade-leave-duration slide-fade-out-backwards;
+    }
+  }
+
+  &.slide-fade-enter {
+    &-active {
+      animation: $slide-fade-enter-duration slide-fade-in-backwards;
+      width: 100%;
+    }
+  }
+}
+
+.slide-vertical {
+  &.forwards {
+    &.slide-fade-enter {
+      &-active {
+        animation: $slide-fade-enter-duration slide-fade-in-vertical-forwards;
+        width: 100%;
+      }
+    }
+  }
+
+  &.backwards {
+    &.slide-fade-leave {
+      &-active {
+        animation: $slide-fade-leave-duration slide-fade-out-backwards;
+      }
+    }
+  }
+}
+
+.rooms {
+  .edit-trip-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.people-count-picker {
+  margin: 0 auto;
+  height: 50px;
+  background-color: #fff;
+  z-index: 20;
+  .label {
+    width: 100%;
+    margin: 0 auto;
+    cursor: pointer;
+    padding: 8px 45px;
+    color: #505050;
+    font-size: 15px;
+    line-height: 32px;
+    border-radius: 3px;
+
+    &:before,
+    &:after {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: "Material Icons";
+      color: #555;
+      font-size: 19px;
+      font-weight: bold;
+      z-index: 10;
+    }
+
+    &:before {
+      content: "people_outline";
+      left: 15px;
+    }
+
+    &:after {
+      content: "chevron_right";
+      right: 15px;
+    }
+  }
+}
+
+.guest-picker {
+  top: 50px;
+  z-index: 10;
+
+  .guest-picker-header {
+    margin-top: 40px;
+  }
+
+  .update-guest-picker {
+    padding: 10px 40px;
+  }
+
+  .guest-picker-close {
+    top: 10px;
+    left: 10px;
+  }
+  .guest-button {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #555;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #555;
+    font-size: 20px;
+
+    &.cursor-not-allowed {
+      opacity: 0.5;
+    }
+
+    &.minus::before {
+      content: "-";
+    }
+    &.plus::before {
+      content: "+";
+    }
+  }
+  .count {
+    &::selection {
+      background-color: transparent;
+    }
+  }
+}

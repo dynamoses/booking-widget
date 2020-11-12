@@ -1,0 +1,55 @@
+.trip-itinerary-container {
+  .itinerary-icon-container {
+    position: relative;
+    .itinerary-icon {
+      margin-top: 2px;
+      border-radius: 50%;
+      padding: 10px;
+      border: 2px solid $highlighted-color;
+      width: $itinerary-icon-size;
+      height: $itinerary-icon-size;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $highlighted-color;
+      background-color: $icon-bg-secondary-color;
+      &.itinerary {
+        color: #fff;
+        background-color: $highlighted-color;
+      }
+    }
+    .line-horizontal {
+      position: absolute;
+      top: $itinerary-icon-size / 2;
+      left: $itinerary-icon-size;
+      width: calc(100% - #{$itinerary-icon-size});
+      height: 2px;
+      background-color: $highlighted-color;
+    }
+  }
+
+  .line-vertical {
+    margin-left: $itinerary-icon-size / 2;
+    top: 100%;
+    width: 0;
+    height: calc(101% + 1rem);
+    border-left: 1px dotted $highlighted-color;
+    border-right: 1px dotted $highlighted-color;
+  }
+  .trip-item:last-child {
+    .line-vertical {
+      display: none;
+    }
+  }
+
+  .trip-itinerary-header {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .trip-itinerary-main-section {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top: 0;
+  }
+}
